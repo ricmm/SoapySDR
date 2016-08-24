@@ -42,6 +42,9 @@ std::string SoapySDR::getRootPath(void)
     const std::string rootPathEnv = getEnvImpl("SOAPY_SDR_ROOT");
     if (not rootPathEnv.empty()) return rootPathEnv;
 
+    const std::string snapPathEnv = getEnvImpl("SNAP");
+    if (not snapPathEnv.empty()) return snapPathEnv;
+
     // Get the path to the current dynamic linked library.
     // The path to this library can be used to determine
     // the installation root without prior knowledge.
